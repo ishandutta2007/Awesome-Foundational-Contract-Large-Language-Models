@@ -1,71 +1,111 @@
-# Awesome-Foundational-Contract-Large-Language-Models
+# Awesome Foundational Contract Large Language Models (LLMs) & AI Ecosystem
 
-## Top Foundational Contract Large Language Models Ecosystem
+[![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+[![Tracked Topics](https://img.shields.io/badge/topics-legal--ai%20%7C%20contract--analysis%20%7C%20llm-blue.svg)](https://github.com/ishandutta2007/Awesome-Foundational-Contract-Large-Language-Models)
+[![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)](http://creativecommons.org/publicdomain/zero/1.0/)
 
-**Curated List of SaaS Platforms & Open-Source GitHub Projects**  
-*Focused on Legal Domain Adaptation, Contract Reasoning & Self-Hosted Legal LLMs*  
+> A curated collection of foundational contract large language models, enterprise legal AI SaaS platforms, open-source contract analysis frameworks, benchmarks, and datasets for contract lifecycle management (CLM), automated clause extraction, redlining, and legal domain reasoning.
+
 **Last updated: March 2026**
 
-This repository tracks notable **SaaS platforms** and **open-source projects** for **Foundational Contract Large Language Models**. These models and platforms help legal teams analyze contracts, extract clauses, assess risk, and answer questions over agreements—covering everything from general-purpose foundation models adapted for legal work to specialized open-source legal LLMs you can self-host for confidentiality and cost control.
-
-**Examples** include Icertis Vera, OpenAI GPT-4, Anthropic Claude 3.5 Sonnet, Google Gemini, Meta Llama 3, Cohere Command, Mistral Large, Legal-Peace-7B, and LiTiL models (the category leaders).
-
-**Open-source emphasis**: This section highlights every major active project for self-hosted legal language models, open-source contract reasoning, and community-driven legal AI—ideal for organizations seeking data sovereignty and avoiding per-token API costs that compound with document volume. The open-source landscape is genuinely emerging: **Legal-Peace-7B** is a fine-tuned Mistral-7B for contract analysis , **LiTiL** provides a suite of task-specific legal models , and **Saul-7B** offers a legal-domain LLM trained on 30B+ tokens of legal corpus .
-
-Contributions welcome! Open an PR to add/update entries. Keep descriptions factual and link to official sites.
-
-## Table of Contents
-- [SaaS/Hosted Platforms](#saas-products)
-- [Open-Source GitHub Projects](#open-source-github-projects)
-- [How to Contribute](#how-to-contribute)
-- [Disclaimer](#disclaimer)
-
-## SaaS/Hosted Platforms
-
-| Product | Description | Pricing (Starting) | Free Tier / Trial Limits |
-|---------|-------------|-------------------|--------------------------|
-| **[Icertis Vera](https://www.icertis.com/)** | Enterprise contract intelligence platform with AI copilot grounded in contract data. Vera uses foundation models adapted for contract reasoning, obligation tracking, and risk identification. | Quote-only (enterprise CLM contract) | No free tier; demo via sales |
-| **[OpenAI GPT-4](https://openai.com/)** | General-purpose foundation model widely used for contract analysis via prompting. **GPT-4.1 pricing: $2/million input tokens, $8/million output tokens** . Strong at clause interpretation but not legal-specific; requires careful prompt engineering and human review. | Pay-per-token (usage-based) | No free tier for GPT-4; API trial credits available |
-| **[Anthropic Claude 3.5 Sonnet](https://www.anthropic.com/)** | Foundation model with strong long-context reasoning, often used for contract review and document analysis. | Pay-per-token (usage-based) | No free tier; API trial available |
-| **[Google Gemini](https://deepmind.google/technologies/gemini/)** | Multimodal foundation model family from Google, including Gemini 2.5 Pro for long-document analysis. | Pay-per-token (usage-based) | Free tier available via Google AI Studio |
-| **[Meta Llama 3](https://llama.meta.com/)** | Open-weight foundation model family. **Llama 3.1 8B Instruct** is frequently evaluated for contract tasks and can be self-hosted . | Free (open weights); infrastructure costs apply | **Free weights**: self-host or use via cloud providers |
-| **[Cohere Command](https://cohere.com/)** | Enterprise LLM with strong retrieval-augmented generation (RAG) capabilities, suited for contract Q&A over internal repositories. | Pay-per-token (usage-based) | Trial available |
-| **[Mistral Large](https://mistral.ai/)** | Foundation model from Mistral AI, available via API or self-hosted (open-weight variants). | Pay-per-token or quote-only for enterprise | Trial available via API |
-
-## Open-Source GitHub Projects
-
-| Project | Star Badge | Description |
-|---------|------------|-------------|
-| **[Legal-Peace-7B](https://huggingface.co/olaverse/legal-peace-v1.0)** | [![Stars](https://img.shields.io/github/stars/Olaverse-Labs/olaverse-legal?style=social&color=white)](https://github.com/Olaverse-Labs/olaverse-legal/stargazers) | **The most accessible open-source contract analysis model with a dedicated inference wrapper.** Fine-tuned from **Mistral-7B-v0.3** using SFT (4,800 cases) + DPO (419 legal reasoning examples). **Apache 2.0 licensed** . Claims **32.6% faster contract analysis** and **14% faster case predictions** vs. base Mistral, with more structured legal responses . Available via the `olaverse` Python package: `pip install olaverse[legal]` . **Critical caveat**: explicitly labeled a **beta model for research purposes only**—outputs must be reviewed by qualified legal professionals and it is **not recommended for production use** . Trained primarily on U.S. legal data . **Best for researchers and developers** wanting a self-hosted, fine-tuned contract model to experiment with and build upon . |
-| **[LiTiL Open Intelligence Models](https://huggingface.co/collections/litillabs/litil-open-intelligence-models)** | — | **A suite of task-specific legal models, each with a defined job in legal workflows.** Includes: **legal request router (1.5B)** for routing incoming matters; **legal intake (4B)** for consistent matter triage; **PII finder (0.3B)** for pre-redaction detection; **clause check (1.5B)** for Yes/No presence queries; **clause tagger (4B)** for taxonomy labeling; **clause classifier (0.4B)** for category assignment; **contract extractor (1.7B)** for CUAD field extraction with `NOT_PRESENT` handling; **contract playbook (3B)** for applying playbook rules; and **financing review (9B)** for source-linked review . **Best for teams wanting composable, narrow models** that each do one contract task well, rather than a single general-purpose legal LLM . |
-| **[Saul-7B-Instruct-V1](https://huggingface.co/Equall/Saul-7B-Instruct-V1)** | — | **Legal-domain LLM built on Mistral-7B, trained on 30B+ tokens of English legal corpus** (case law, statutes, briefs, scholarly articles). **MIT licensed** . Developed by Equall.ai, CentraleSupélec, Sorbonne Université, Instituto Superior Técnico, and NOVA School of Law . Claims **~0.61 average on LegalBench-Instruct**, an 11% relative improvement over previous best-in-class 7B models . Two-stage training: legal continued pretraining + instruction fine-tuning (~600K instructions) . **Trade-off**: can produce hallucinations; requires human review; 16GB+ VRAM recommended . **Best for legal professionals** wanting a transparent, self-hostable legal LLM with strong benchmark performance . |
-| **[Awesome Legal AI (Chinese)](https://github.com/lilialla/awesome-legal-ai-zh)** | — | **Curated index of 200+ open-source legal AI tools** for Chinese lawyers and legal professionals. Covers contract review, Word document formatting, OCR, redaction, legal research, and more—each entry annotated with **data path (local/self-hosted/API), external dependencies, verification depth, and license** . **Best for Chinese-speaking legal teams** wanting a task-oriented map of the open-source legal AI landscape . |
-
-### Additional Strong Open-Source Options
-
-| Project | Star Badge | Description |
-|---------|------------|-------------|
-| **[ContractEval (Benchmark)](https://arxiv.org/abs/2508.03080)** | — | **Clause-level legal risk identification benchmark for commercial contracts.** Evaluates **19 LLMs** including GPT-4.1, Gemini 2.5 Pro, Claude Sonnet 4, and 15 open-source models (DeepSeek R1, Llama 3.1 8B, Gemma 3, Qwen3 series). **Key insight**: open-source models are attractive for legal work because **client confidentiality requires local deployment** and they avoid per-token costs . **Best as an evaluation framework** for selecting which model to self-host . |
-| **[LegalBench](https://arxiv.org/abs/2308.11462)** | — | **Collaboratively built benchmark for measuring legal reasoning in LLMs.** Includes contract-specific tasks like `cuad_audit_right` (does a clause grant audit rights?) and `definition_classification` (does a sentence define a term?). **Best as the standard evaluation suite** for comparing legal LLM performance . |
-
-**Frameworks for building custom systems**: Choose **Legal-Peace-7B** for a fine-tuned contract model to experiment with (research only) , **LiTiL models** for composable task-specific extraction and classification , or **Saul-7B** for a legal-domain LLM with stronger benchmark performance —all self-hostable without per-token API fees. For evaluation, use **ContractEval** and **LegalBench** to select and validate models against your actual contract corpus.
-
-## How to Contribute
-
-1. Fork the repo.
-2. Add/edit entries in `README.md` (follow existing format).
-3. Include: name, link, 1–2 sentence description, and whether it's SaaS or open-source.
-4. Submit PR with a short explanation.
-
-Star the repo if you find it useful!
-
-## Disclaimer
-
-- This is a **community-curated** list — not exhaustive and not an endorsement.
-- Contract LLMs process legally sensitive and privileged documents; **data residency is critical**—open-source self-hosted models are often preferred for legal work precisely because client confidentiality obligations restrict transmission to external servers . Enforce strict access controls and never rely on model output without qualified legal review.
-- **Open-source legal LLMs are early-stage and carry significant limitations.** **Legal-Peace-7B is explicitly a beta research model**—not for production use, trained primarily on U.S. legal data, and outputs must be reviewed by attorneys . **Saul-7B** shows strong benchmark performance but can hallucinate and recommends 16GB+ VRAM . **LiTiL models** are narrow and task-specific, not general-purpose reasoners . **Proprietary foundation models** (GPT-4, Claude, Gemini) are stronger general reasoners but require sending documents to external APIs—a compliance risk for privileged legal work . **Validate model performance on your own contract corpus** using **ContractEval** or **LegalBench** before committing, and always maintain human-in-the-loop review for any legally consequential output.
+This repository comprehensively tracks commercial **SaaS platforms** and **open-source GitHub projects** driving **Foundational Contract Large Language Models**. These systems empower legal engineering and contract management teams to analyze agreements, extract complex clauses, calculate liability risk, and perform grounded Q&A over corporate repositories. They range from massive proprietary multi-trillion-dollar foundation models adapted for enterprise legal operations to domain-tailored, self-hostable open-source legal LLMs designed for zero-data-leakage compliance.
 
 ---
 
-**Made for legal engineers, contract AI researchers, and organizations building legal language model infrastructure.**  
-Let's make foundational contract LLMs more open, verifiable, and legally sound.
+## Table of Contents
+
+- [Sector Overview & Market Dynamics](#sector-overview--market-dynamics)
+- [SaaS & Hosted Platforms](#saas--hosted-platforms)
+- [Open-Source GitHub Projects](#open-source-github-projects)
+- [Specialized Open Weights & Models](#specialized-open-weights--models)
+- [Evaluation Benchmarks & Frameworks](#evaluation-benchmarks--frameworks)
+- [How to Contribute](#how-to-contribute)
+- [Disclaimer & Security Considerations](#disclaimer--security-considerations)
+
+---
+
+## Sector Overview & Market Dynamics
+
+The global Legal AI and Contract Intelligence market reached an estimated **$2.1 billion to $2.8 billion in 2025–2026**, on pace to exceed **$11 billion by 2030** with an aggressive CAGR of **17% to 28%**. 
+
+Market structure exhibits a **hybrid, moderately fragmented landscape**:
+- **Consolidated Enterprise Layer:** High concentration exists at the enterprise infrastructure layer, where hyperscale LLM providers (Alphabet/Google, Meta, OpenAI, Anthropic) and legacy legal tech conglomerates (Thomson Reuters, LexisNexis, Icertis) dominate proprietary legal databases, standard API pipes, and multi-million-dollar Global 2000 CLM contracts.
+- **Dynamic Fragmented Innovator Layer:** Intense fragmentation persists at the application, agentic, and self-hosted model tiers. Proliferating point-solution startups, specialized fine-tunes, and open-source frameworks (e.g., OpenContracts, Mike, Legal-BERT derivatives) compete vigorously for corporate data sovereignty, automated redlining workflows, and local zero-data-retention deployments.
+
+---
+
+## SaaS & Hosted Platforms
+
+The table below catalogs premier hosted foundation models and legal intelligence SaaS solutions. Entries are **sorted descending by company scale (market capitalization or private valuation)**.
+
+| Product | Company Valuation / Revenue | Description | Pricing (Starting Tier) | Free Tier / Trial Limits |
+|:---|:---|:---|:---|:---|
+| **[Google Gemini](https://deepmind.google/technologies/gemini/)** | **~$2.1T+ Market Cap** (Alphabet Inc. / $350B+ Annual Revenue) | Multimodal foundation model family featuring Gemini 1.5 Pro and 2.5 Pro with native long-context windows (up to 2M tokens), optimized for cross-contract discovery and multi-document repository review. | **$1.25 / 1M input tokens**, **$10.00 / 1M output tokens** (Gemini 2.5 Pro up to 200k tokens via Google AI Studio API pay-as-you-go). | **Free plan forever**: Free tier in Google AI Studio capped at **5 to 15 Requests/Min (RPM)**, **50 to 1,500 Requests/Day (RPD)** depending on model variant; data may be used for model training. |
+| **[Meta Llama 3](https://llama.meta.com/)** | **~$1.6T+ Market Cap** (Meta Platforms / $160B+ Annual Revenue) | Open-weight foundation model ecosystem (Llama 3.1 8B, 70B, 405B). Powers self-hosted enterprise legal setups or managed serverless inference for private contract analysis and fine-tuning. | **$0.00 base software license** (Open weights). Managed hosted serverless APIs start at **$0.15 / 1M tokens** (via third-party inference clouds). | **Free open weights forever**: Permissive community license up to 700M monthly active users; cloud providers offer variable trial compute credits. |
+| **[Anthropic Claude 3.5 Sonnet](https://www.anthropic.com/)** | **~$60B–$965B Private Valuation / IPO Track** (~$16B+ H1 2026 Run-rate Revenue) | State-of-the-art reasoning model family known for superior clause interpretation, legal drafting, precision extraction, and 200k context windows with automated prompt caching. | **$3.00 / 1M input tokens**, **$15.00 / 1M output tokens** (Claude 3.5 Sonnet via Anthropic Console API). Prompt cache write: $3.75/1M, cache read: $0.30/1M. | **$5 one-time promotional trial credit** provided upon SMS-verified account registration in Claude Console; requires payment method once credit is exhausted. |
+| **[OpenAI GPT-4](https://openai.com/)** | **~$157B–$852B Private Valuation** (~$13B+ Revenue, ~$50B Run-rate) | Industry-standard foundation models (GPT-4o, GPT-4.1) used for zero-shot contract review, clause anomaly extraction, and legal query answering via the OpenAI API and ChatGPT Enterprise. | **$2.00 / 1M input tokens**, **$8.00 / 1M output tokens** (GPT-4.1 API standard pay-as-you-go tier). | **No permanent free API tier**; new accounts receive variable promotional trial credits (historically $5 grant valid for 90 days); standard platform usage operates on prepaid credits. |
+| **[Mistral Large](https://mistral.ai/)** | **~$14B–$24B Private Valuation** (€11.7B Series C / ~$300M+ ARR) | Top-tier European foundation model engineered with strong multilingual legal reasoning and JSON structured output, available via API or private sovereign deployments. | **$0.70 / 1M input tokens**, **$2.10 / 1M output tokens** (Mistral Large 4 via La Plateforme API). | **Free Mode evaluation tier**: Prototyping allowed in Mistral Studio; standard programmatic API keys require billing enablement with a free-tier rate ceiling of **1 Request/Second (1 RPS)**. |
+| **[Cohere Command](https://cohere.com/)** | **~$7.0B Private Valuation** (Series D / ~$240M ARR) | Enterprise-focused LLM suite (Command R / Command R+) specializing in retrieval-augmented generation (RAG), citation grounding, and verifiable audit trails over proprietary document vaults. | **$0.15 / 1M input tokens**, **$0.60 / 1M output tokens** (Command R API standard pay-as-you-go). | **Free Trial Key plan forever**: Capped at **1,000 requests/month** and **20 Requests/Min (RPM)** for non-commercial evaluation and prototyping. |
+| **[Icertis Vera](https://www.icertis.com/)** | **~$5.0B Private Valuation** ($350M+ ARR) | Specialized enterprise contract intelligence copilot built directly into the Icertis Contract Intelligence (ICI) platform. Designed for obligation tracking, risk scoring, and post-signature governance. | **~$150 to $350 per user/month** (Enterprise CLM base platform commitments typically start at **$88,000 to $150,000+/year** annual contract value). | **No self-service free tier or public trial**; access is scoped via enterprise sales demo and assisted sandbox pilot (typically 30-day guided POC). |
+
+---
+
+## Open-Source GitHub Projects
+
+Open-source repositories providing verifiable code, document management platforms, MCP skills, and automated contract workflows. Entries are **sorted descending by GitHub star count**. Each badge links directly to the repository's stargazers page.
+
+| Project & Repository | Star Count | Description | Primary Technology |
+|:---|:---:|:---|:---|
+| **[open-legal-products/mike](https://github.com/open-legal-products/mike)** | [![Stars](https://img.shields.io/github/stars/open-legal-products/mike?style=social&color=white)](https://github.com/open-legal-products/mike/stargazers) | **Comprehensive Open-Source Legal AI Platform.** Full-featured system for document review, contract analysis, citation verification via CourtListener, tabular clause extractions, and Microsoft Word task-pane plugin integration. | Python, TypeScript, Ollama |
+| **[shcherbak-ai/contextgem](https://github.com/shcherbak-ai/contextgem)** | [![Stars](https://img.shields.io/github/stars/shcherbak-ai/contextgem?style=social&color=white)](https://github.com/shcherbak-ai/contextgem/stargazers) | **Structured Document Intelligence & Extraction Engine.** High-throughput extraction pipeline designed for parsing unstructured legal agreements, converting messy text and PDFs into validated schemas and decision models. | Python, Pydantic, LLMs |
+| **[Open-Source-Legal/OpenContracts](https://github.com/Open-Source-Legal/OpenContracts)** | [![Stars](https://img.shields.io/github/stars/Open-Source-Legal/OpenContracts?style=social&color=white)](https://github.com/Open-Source-Legal/OpenContracts/stargazers) | **Enterprise Document Intelligence & DMS for the Agentic Era.** Open-source contract analysis platform providing PDF annotation, layout analysis, vector embeddings, human-in-the-loop review, and Model Context Protocol (MCP) endpoints for autonomous agents. | Python, Django, React, Celery |
+| **[HazyResearch/legalbench](https://github.com/HazyResearch/legalbench)** | [![Stars](https://img.shields.io/github/stars/HazyResearch/legalbench?style=social&color=white)](https://github.com/HazyResearch/legalbench/stargazers) | **Collaborative Legal Reasoning Benchmark for LLMs.** Comprehensive benchmark featuring 162 distinct legal tasks across contract analysis, definition classification, clause extraction, rule application, and statutory interpretation. | Python, Evaluation Suite |
+| **[The-Atticus-Project/cuad](https://github.com/The-Atticus-Project/cuad)** | [![Stars](https://img.shields.io/github/stars/The-Atticus-Project/cuad?style=social&color=white)](https://github.com/The-Atticus-Project/cuad/stargazers) | **Contract Understanding Atticus Dataset (CUAD - NeurIPS).** Curated corpus of 500+ commercial contracts with 13,000+ legal annotations spanning 41 crucial contract clause types. Serves as the industry gold standard for contract NLP fine-tuning. | Python, PyTorch, Transformers |
+| **[evolsb/claude-legal-skill](https://github.com/evolsb/claude-legal-skill)** | [![Stars](https://img.shields.io/github/stars/evolsb/claude-legal-skill?style=social&color=white)](https://github.com/evolsb/claude-legal-skill/stargazers) | **AI-Powered Contract Review Skill for Agents.** Agentic skill supporting Claude Code, Cursor, Codex, and 26+ IDE tools. Implements CUAD risk detection, market benchmarks, and automated attorney-ready redline generation. | Markdown, Shell, MCP |
+| **[accordproject/template-archive](https://github.com/accordproject/template-archive)** | [![Stars](https://img.shields.io/github/stars/accordproject/template-archive)](https://github.com/accordproject/template-archive/stargazers) | **Smart Legal Contracts & Templating System (Cicero).** Open standards for computable legal contracts, combining human-readable legal prose with machine-executable data logic and domain models. | TypeScript, Ergo |
+| **[lilialla/awesome-legal-ai-zh](https://github.com/lilialla/awesome-legal-ai-zh)** | [![Stars](https://img.shields.io/github/stars/lilialla/awesome-legal-ai-zh?style=social&color=white)](https://github.com/lilialla/awesome-legal-ai-zh/stargazers) | **Curated Index of Legal AI Tools (Chinese & Global).** Directory indexing 200+ legal AI tools, covering contract review, OCR, local model deployment, citation checking, and practice management. | Markdown, Curated List |
+| **[tomasonjo-labs/legal-tech-chat](https://github.com/tomasonjo-labs/legal-tech-chat)** | [![Stars](https://img.shields.io/github/stars/tomasonjo-labs/legal-tech-chat?style=social&color=white)](https://github.com/tomasonjo-labs/legal-tech-chat/stargazers) | **Knowledge Graph & LangGraph Agent for Contract Intelligence.** Converts CUAD contracts into Neo4j knowledge graphs and employs agentic RAG for multi-hop legal relationship exploration and risk reasoning. | Python, LangChain, Neo4j |
+| **[Liquid-Legal-Institute/Legal-LLMs-GPTs](https://github.com/Liquid-Legal-Institute/Legal-LLMs-GPTs)** | [![Stars](https://img.shields.io/github/stars/Liquid-Legal-Institute/Legal-LLMs-GPTs?style=social&color=white)](https://github.com/Liquid-Legal-Institute/Legal-LLMs-GPTs/stargazers) | **Legal LLM & GPT Landscape Directory.** Curated repository and taxonomy tracking foundational models, prompts, tools, and regulatory guidelines for generative AI in the legal sector. | Markdown, Research |
+| **[Azure-Samples/ally-legal-assistant](https://github.com/Azure-Samples/ally-legal-assistant)** | [![Stars](https://img.shields.io/github/stars/Azure-Samples/ally-legal-assistant?style=social&color=white)](https://github.com/Azure-Samples/ally-legal-assistant/stargazers) | **Ally AI Contract Assistant for Microsoft Word.** Open-source enterprise Word plugin utilizing Azure OpenAI for real-time contract Q&A, clause consistency analysis, and automated document redline markup. | C#, TypeScript, Office Add-in |
+| **[chen-friedman/awesome-legaltech](https://github.com/chen-friedman/awesome-legaltech)** | [![Stars](https://img.shields.io/github/stars/chen-friedman/awesome-legaltech?style=social&color=white)](https://github.com/chen-friedman/awesome-legaltech/stargazers) | **Curated LegalTech & Legal AI Ecosystem.** Broad catalog mapping global open-source legal AI tools, document automation systems, compliance frameworks, and benchmark datasets. | Markdown, Curated List |
+| **[Olaverse-Labs/olaverse](https://github.com/Olaverse-Labs/olaverse)** | [![Stars](https://img.shields.io/github/stars/Olaverse-Labs/olaverse?style=social&color=white)](https://github.com/Olaverse-Labs/olaverse/stargazers) | **Olaverse AI Inference SDK.** Python package providing high-speed inference wrappers for legal language models, including the `olaverse[legal]` module for running Legal-Peace models. | Python, Package |
+
+---
+
+## Specialized Open Weights & Models
+
+Specialized open-weight models available directly on Hugging Face for self-hosted, air-gapped contract intelligence:
+
+- **[Legal-Peace-7B](https://huggingface.co/olaverse/legal-peace-v1.0)**: Fine-tuned from **Mistral-7B-v0.3** via Supervised Fine-Tuning (4,800 legal cases) and Direct Preference Optimization (419 legal reasoning pairs). Licensed under Apache 2.0. Tailored for contract review, clause anomaly detection, and rapid case assessment (*research beta; requires attorney supervision*).
+- **[Saul-7B-Instruct-v1](https://huggingface.co/Equall/Saul-7B-Instruct-v1)**: Developed by Equall.ai, CentraleSupélec, and Sorbonne. Trained on a 30B+ token legal corpus and fine-tuned on ~600k legal instructions. Scores ~0.61 on LegalBench-Instruct under an MIT license.
+- **[LiTiL Task-Specific Legal Suite](https://huggingface.co/collections/litillabs/litil-open-intelligence-models)**: A modular suite of small, efficient models tailored for distinct legal pipeline stages:
+  - *Clause Classifier (0.4B)*: Immediate clause type assignment.
+  - *PII Finder (0.3B)*: Redaction and privacy auditing before LLM submission.
+  - *Clause Check (1.5B)*: Strict binary verification of specific obligation clauses.
+  - *Contract Extractor (1.7B)*: Targeted field extraction mapped against CUAD schemas.
+  - *Contract Playbook (3B)*: Evaluates deviations against defined corporate risk playbooks.
+
+---
+
+## Evaluation Benchmarks & Frameworks
+
+- **[ContractEval Benchmark (arXiv:2508.03080)](https://arxiv.org/abs/2508.03080)**: Comprehensive clause-level legal risk identification benchmark for commercial agreements. Evaluates 19 LLMs across edge-case liabilities and validates model efficacy for confidential on-premise deployment.
+- **[LegalBench (arXiv:2308.11462)](https://arxiv.org/abs/2308.11462)**: The primary academic benchmark for empirical legal reasoning across issue spotting, clause categorization, and judicial precedent retrieval.
+
+---
+
+## How to Contribute
+
+1. **Fork the repository** on GitHub.
+2. **Add or update entries** in `README.md`:
+   - Keep entries factual, verified, and strictly formatted.
+   - For SaaS products, verify specific starting prices and exact free trial / free tier terms.
+   - For open-source GitHub projects, ensure repository URLs and live star count badges are included.
+3. **Submit a Pull Request** with a concise description of your changes.
+
+---
+
+## Disclaimer & Security Considerations
+
+- **Confidentiality & Attorney-Client Privilege**: Contracts contain sensitive corporate trade secrets and privileged communications. Transmitting unredacted agreements to public third-party APIs can violate compliance or confidentiality agreements. For strict data sovereignty, consider self-hosting open-weight models (such as Llama 3 or Saul-7B) within your own VPC or air-gapped environment.
+- **Legal Advice**: Software tools and foundation models listed here are for assistive analysis, indexing, and drafting only. None of these models provide certified legal advice; all outputs must undergo qualified human attorney review.
