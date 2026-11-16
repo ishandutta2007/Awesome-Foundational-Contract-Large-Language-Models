@@ -62,9 +62,9 @@ The table below catalogs premier hosted foundation models and legal intelligence
 
 ## 💻 Open-Source GitHub Projects
 
-Open-source repositories providing verifiable code, document management platforms, MCP skills, and automated contract workflows. Entries are **sorted descending by GitHub star count**. Each badge links directly to the repository's stargazers page. ⭐
+Open-source repositories providing verifiable code, document management platforms, MCP skills, and automated contract workflows. Entries are **sorted descending by GitHub Stars_Count**. Each badge links directly to the repository's stargazers page. ⭐
 
-| Project & Repository | Star Count | Description | Primary Technology |
+| Project & Repository | Stars_Count | Description | Primary Technology |
 |:---|:---:|:---|:---|
 | **[open-legal-products/mike](https://github.com/open-legal-products/mike)** | [![Stars](https://img.shields.io/github/stars/open-legal-products/mike?style=social&color=white)](https://github.com/open-legal-products/mike/stargazers) | **Comprehensive Open-Source Legal AI Platform.** Full-featured system for document review, contract analysis, citation verification via CourtListener, tabular clause extractions, and Microsoft Word task-pane plugin integration. 🧑‍⚖️ | Python, TypeScript, Ollama |
 | **[shcherbak-ai/contextgem](https://github.com/shcherbak-ai/contextgem)** | [![Stars](https://img.shields.io/github/stars/shcherbak-ai/contextgem?style=social&color=white)](https://github.com/shcherbak-ai/contextgem/stargazers) | **Structured Document Intelligence & Extraction Engine.** High-throughput extraction pipeline designed for parsing unstructured legal agreements, converting messy text and PDFs into validated schemas and decision models. 💎 | Python, Pydantic, LLMs |
@@ -116,7 +116,7 @@ Specialized open-weight models available directly on Hugging Face for self-hoste
 2. ✍️ **Add or update entries** in `README.md`:
    - Keep entries factual, verified, and strictly formatted.
    - For SaaS products, verify specific starting prices and exact free trial / free tier terms.
-   - For open-source GitHub projects, ensure repository URLs and live star count badges are included.
+   - For open-source GitHub projects, ensure repository URLs and live Stars_Count badges are included.
 3. 🚀 **Submit a Pull Request** with a concise description of your changes.
 
 ---
@@ -136,3 +136,12 @@ Thank you for exploring and utilizing this ecosystem directory! If you find this
 
 - 🔐 **Confidentiality & Attorney-Client Privilege**: Contracts contain sensitive corporate trade secrets and privileged communications. Transmitting unredacted agreements to public third-party APIs can violate compliance or confidentiality agreements. For strict data sovereignty, consider self-hosting open-weight models (such as Llama 3 or Saul-7B) within your own VPC or air-gapped environment.
 - ⚖️ **Legal Advice**: Software tools and foundation models listed here are for assistive analysis, indexing, and drafting only. None of these models provide certified legal advice; all outputs must undergo qualified human attorney review.
+
+## ⭐ Star History
+
+<a href="https://star-history.com/#ishandutta2007/Awesome-Foundational-Contract-Large-Language-Models&Timeline" align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/ishandutta2007_Awesome-Foundational-Contract-Large-Language-Models_growth.svg">
+    <img alt="Star History Chart" src="assets/ishandutta2007_Awesome-Foundational-Contract-Large-Language-Models_growth.svg">
+  </picture>
+</a>
