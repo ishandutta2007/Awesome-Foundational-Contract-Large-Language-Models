@@ -1,6 +1,6 @@
 # Awesome-Foundational-Contract-Large-Language-Models
 
-# Top Foundational Contract Large Language Models Ecosystem
+## Top Foundational Contract Large Language Models Ecosystem
 
 **Curated List of SaaS Platforms & Open-Source GitHub Projects**  
 *Focused on Legal Domain Adaptation, Contract Reasoning & Self-Hosted Legal LLMs*  
